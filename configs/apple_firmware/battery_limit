@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "Error: No limit provided."
+    echo "Usage: battery_limit <percentage>"
+    exit 1
+fi
+
+if ! [[ "$1" =~ ^[0-9]+$ ]]; then
+    echo "Error: The battery limit must be a number."
+    exit 1
+fi
+
+if [ "$1" -lt 40 ] || [ "$1" -gt 100 ]; then
+    echo "Error: Please enter a valid percentage between 40 and 100."
+    exit 1
+fi
+
+echo "$1" | sudo tee /sys/bus/acpi/drivers/applesmc/APP0001:00/battery_charge_limit > /dev/null

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+sudo modprobe -r hci_bcm4377
+sudo modprobe -r brcmfmac_wcc
+sudo modprobe -r brcmfmac
+
+sudo modprobe brcmfmac
+sudo modprobe brcmfmac_wcc
+sudo modprobe hci_bcm4377

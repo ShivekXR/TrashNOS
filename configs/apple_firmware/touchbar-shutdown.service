@@ -1,0 +1,11 @@
+[Unit]
+Description=Touchbar Shutdown
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/sbin/modprobe -r hid_appletb_kbd
+
+[Install]
+WantedBy=halt.target reboot.target poweroff.target

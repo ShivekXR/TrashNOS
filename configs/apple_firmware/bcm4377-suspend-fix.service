@@ -1,0 +1,20 @@
+[Unit]
+Description=BCM4377 Suspend Fix
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=-/usr/bin/bluetoothctl power off
+ExecStart=-/usr/sbin/modprobe -r hci_bcm4377
+ExecStart=-/usr/sbin/modprobe -r brcmfmac_wcc
+ExecStart=-/usr/sbin/modprobe -r brcmfmac
+
+ExecStop=-/usr/sbin/modprobe brcmfmac
+ExecStop=-/usr/sbin/modprobe brcmfmac_wcc
+ExecStop=-/usr/sbin/modprobe hci_bcm4377
+
+[Install]
+WantedBy=sleep.target
