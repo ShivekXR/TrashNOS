@@ -1,5 +1,5 @@
 # TrashNOS
-<img src="https://raw.githubusercontent.com/ShivekXR/TrashNOS/main/icon.png" align="right" width="100px"/>
+<img src="https://raw.githubusercontent.com/ShivekXR/TrashNOS/Main/icon.png" align="right" width="100px"/>
 
 **Error: Project failed successfully!**
 
